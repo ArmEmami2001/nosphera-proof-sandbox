@@ -1,0 +1,13 @@
+name: Fixture tests
+on:
+  pull_request:
+  push:
+    branches: [proof-test-base]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -v
